@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Verdana', sans-serif;
+    min-height: 1000px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;           
+    background-color: #222;
+    color: white;
+    height: 90px;                    
+    padding: 0 20px 0 0;
+
+    transition: transform 0.25s ease;
+    z-index: 1000;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;                        
+    padding-left: 50px;    
+    padding-bottom: 15px;           
+    margin: 0;                         
+    position: relative;
+    top: 0;                       
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin: 0;          
+    margin-right: 25px; 
+    padding-bottom: 15px;             
+    transform: none;                 
+}
+
+.nav-left strong {
+    font-size: 24px;
+}
+
+.nav-left a,
+.nav-right a {
+    font-size: 18px; 
+}
+
+.nav-left a,
+.nav-right a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    text-decoration: underline;
+}
+
+.nav-right form input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+
+main {
+    margin-top: 90px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+ul li a {
+    color: #222;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+.no-results {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+    color: #aaa;
+}
+
+
+
+
+.page-title {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.site-footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(20, 20, 20, 0.9);
+    color: #ccc;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+}

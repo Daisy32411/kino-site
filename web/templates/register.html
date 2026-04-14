@@ -1,0 +1,34 @@
+{{ define "register" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация — URRO</title>
+    <link rel="stylesheet" href="/static/css/register.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-left">
+        <strong>URRO</strong>
+        <strong><a href="/">Главная</a></strong>
+    </div>
+</header>
+
+<main>
+    <div class="register-box">
+        <h1>Создать аккаунт</h1>
+        <form method="POST" action="/register">
+            <input type="email" name="email" placeholder="Email (например, yourname@gmail.com)" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="note">
+            Уже есть аккаунт? <a href="/login">Войти</a>
+        </p>
+    </div>
+</main>
+
+</body>
+</html>
+{{ end }}

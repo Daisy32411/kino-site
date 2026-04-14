@@ -1,0 +1,43 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>URRO</title>
+
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/movies.css">
+</head>
+<body>
+
+{{ template "header" . }}
+
+<main>
+    <h1 class="page-title">{{.Title}}</h1>
+
+    {{if .Movies}}
+    <div class="movies">
+        {{range .Movies}}
+            <a href="/movie/{{.Slug}}">
+                <div class="movie">
+                    <img src="{{.Image}}" alt="{{.Title}}">
+                    <p>{{.Title}}</p>
+                </div>
+            </a>
+        {{end}}
+    </div>
+    {{else}}
+    <p class="no-results">Не найдено фильмов, соответствующих вашему запросу</p>
+    {{end}}
+
+</main>
+
+<script src="/static/js/main.js"></script>
+
+<footer class="site-footer">
+    <p>© 2026 URRO. Все права защищены. | Контакты: kamilazatovich12@gmail.com | Политика конфиденциальности</p>
+</footer>
+
+</body>
+</html>
+{{ end }}

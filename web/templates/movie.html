@@ -1,0 +1,84 @@
+{{ define "movie" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Movie.Title}} — URRO</title>
+
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/movie.css">
+
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+</head>
+<body>
+
+{{ template "header" . }}
+
+<main class="movie-container">
+
+    <div class="movie-poster">
+        <img src="{{.Movie.Image}}" alt="{{.Movie.Title}}">
+    </div>
+
+    <div class="movie-info">
+        <h1 class="movie-title">{{.Movie.Title}} ({{.Movie.Year}})</h1>
+
+        <p class="movie-director">
+            <strong>Режиссёр:</strong>
+            <a href="/director/{{.Movie.Director}}">{{.Movie.Director}}</a>
+        </p>
+
+        <p class="movie-genres-label"><strong>Жанры:</strong></p>
+        <ul class="movie-genres">
+            {{range .Movie.Genres}}
+            <li>
+                <a href="/genre/{{.}}">{{.}}</a>
+            </li>
+            {{end}}
+        </ul>
+
+        <p class="movie-description">{{.Movie.Description}}</p>
+        
+        <p class="movie-actors-label"><strong>Актёры:</strong></p>
+        <ul class="movie-actors">
+            {{range .Movie.Actors}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+    </div>
+
+    <div class="player">
+        {{ if .Movie.File }}
+            <video id="player" controls playsinline preload="auto">
+                <source src="/static/videos/{{.Movie.File}}" type="video/mp4">
+            </video>
+        {{ else }}
+            <div class="player-placeholder">
+                <p>Видео пока недоступно</p>
+            </div>
+        {{ end }}
+    </div>
+
+</main>
+
+<script src="/static/js/main.js"></script>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+<script>
+    const videoEl = document.getElementById('player');
+    if (videoEl) {
+        const player = new Plyr(videoEl, {
+            clickToPlay: true,
+            hideControls: false
+        });
+    }
+</script>
+
+<footer class="site-footer">
+    <p>© 2026 URRO. Все права защищены. | Контакты: kamilazatovich12@gmail.com | Политика конфиденциальности</p>
+</footer>
+
+</body>
+</html>
+{{ end }}

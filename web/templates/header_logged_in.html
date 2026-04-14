@@ -1,0 +1,15 @@
+{{ define "header_logged_in" }}
+<header>
+    <div class="nav-left">
+        <strong>URRO</strong>
+        <strong><a href="/">Главная</a></strong>
+    </div>
+    <div class="nav-right">
+        <form action="/" method="GET">
+            <strong><input type="text" name="q" placeholder="Поиск..." /></strong>
+        </form>
+        <strong><a href="/profile">Профиль</a></strong>
+        <strong><a href="/logout">Выйти</a></strong>
+    </div>
+</header>
+{{ end }}

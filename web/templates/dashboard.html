@@ -1,0 +1,21 @@
+{{ define "dashboard" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}} — URRO</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+{{ template "header_logged_in" . }}
+
+<main class="register-box">
+    <h1>{{.Title}}</h1>
+    <p>Вы вошли как: <strong>{{.Email}}</strong></p>
+    <p>Здесь можно показывать фильмы, рекомендации и т.д.</p>
+</main>
+
+</body>
+</html>
+{{ end }}

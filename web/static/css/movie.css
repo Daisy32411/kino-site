@@ -1,0 +1,130 @@
+.movie-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 100%;
+    margin: 30px left;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    flex-wrap: wrap;
+}
+
+.movie-poster img {
+    width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    display: block;
+    border: 0.5px solid #8885;
+}
+
+.movie-info {
+    flex: 1;
+    max-width: 1000px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin-top: -36px;
+}
+
+.movie-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.movie-info a:hover {
+    text-decoration: underline;
+}
+
+.movie-title {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.movie-director,
+.movie-description {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.movie-director a {
+    color: white;
+    text-decoration: none;
+}
+
+.movie-director a:hover {
+    text-decoration: underline;
+}
+
+.movie-actors {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.movie-actors li {
+    background-color: #961;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.movie-actors-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.movie-genres {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.movie-genres li {
+    background-color: #411;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.movie-genres-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.player {
+    width: 1400px;
+    height: 100%;
+    margin-left: 200px;
+    margin-top: 30px;
+    border: 3px solid #8885;
+}
+
+.player video {
+    width: 100%;
+    height: auto;
+    background: black;
+}
+
+.player-placeholder {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 3px solid #8885;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    background-color: #f9f9f9;
+}

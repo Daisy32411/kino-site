@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    container_name: kino-app
+    ports:
+      - "1111:1111"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 1234
+      DB_NAME: kino
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    container_name: kino-db
+    restart: always
+    ports:
+      - "5432:5432"

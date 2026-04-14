@@ -1,0 +1,19 @@
+{{ define "profile" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль — URRO</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+{{ template "header" . }}
+<main class="profile-box">
+    <h1>Добро пожаловать, {{.Email}}!</h1>
+    <form action="/logout" method="POST">
+        <button type="submit">Выйти</button>
+    </form>
+</main>
+</body>
+</html>
+{{ end }}
